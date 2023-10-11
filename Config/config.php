@@ -12,6 +12,7 @@
         private $db_name = "db_user";
         private $table_name = "user";
         private $user_table = "users";
+        private $media_table = "media";
 
         private $conn;
 
@@ -98,6 +99,16 @@
                 return "$id failled to update...";
             }
 
+
+        }
+
+        public function media_table($name,$path) {
+            
+            $query = "INSERT INTO $this->media_table(name,path) VALUES('$name','$path');";
+
+            $res = mysqli_query($this->conn,$query);
+
+            return $res;
 
         }
 
